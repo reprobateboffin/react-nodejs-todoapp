@@ -1,16 +1,9 @@
 import React from 'react'
 import Todo from './Todo'
-const todos = [
-  {id: 1, message : "wake up"},
-  {id: 2, message : "walk the dog"},
-  {id: 3, message : "go to bed"},
 
 
 
-]
-
-
-const TodoList = () => {
+const TodoList = ({todos}) => {
   return (
     <div>
       { todos.map(todo =>{
