@@ -1,22 +1,25 @@
 import React, { useState} from 'react'
 
 const TodoForm = ({todos,setTodos}) => {
+const initialState  = {
+id : '',
+    message:''
+}
 
-
-  const [todo ,setTodo] = useState({
-    id : '',
-    message:''});
+  const [todo ,setTodo] = useState(initialState);
 
   const handleChange=(e)=>{
     console.log("form changed");
-    setTodo({message:e.target.value,  id : Date.now(),    })
+    setTodo({message:e.target.value, 
+             id : Date.now(),    })
     // console.log(todo)
 
   } 
   const handleSubmit=(e)=>{
     e.preventDefault();
     console.log(todos)
-    setTodos([...todos,todo])
+    setTodos([todo,...todos])
+    setTodo(initialState)
 
   }
 
